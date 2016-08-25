@@ -362,7 +362,7 @@ defineSuite([
         };
         var batchTableBinary = new Float64Array([0, 1]);
         expect(function() {
-            var batchTable = new Cesium3DTileBatchTable(mockContent, 2, batchTableJson, batchTableBinary);
+            return new Cesium3DTileBatchTable(mockContent, 2, batchTableJson, batchTableBinary);
         }).toThrowDeveloperError();
     });
 
@@ -375,7 +375,7 @@ defineSuite([
         };
         var batchTableBinary = new Float64Array([0, 1]);
         expect(function() {
-            var batchTable = new Cesium3DTileBatchTable(mockContent, 2, batchTableJson, batchTableBinary);
+            return new Cesium3DTileBatchTable(mockContent, 2, batchTableJson, batchTableBinary);
         }).toThrowDeveloperError();
     });
 
@@ -388,7 +388,7 @@ defineSuite([
             }
         };
         expect(function() {
-            var batchTable = new Cesium3DTileBatchTable(mockContent, 2, batchTableJson);
+            return new Cesium3DTileBatchTable(mockContent, 2, batchTableJson);
         }).toThrowDeveloperError();
     });
 
