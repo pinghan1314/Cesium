@@ -1079,25 +1079,6 @@ define([
         if (defined(heightReference)) {
             billboard.heightReference = heightReference;
             label.heightReference = heightReference;
-
-            // If heightReference is CLAMP_TO_GROUND, then account for verticalOrigin being BOTTOM instead of center
-            if (heightReference === HeightReference.CLAMP_TO_GROUND) {
-                var bbPixelOffset = billboard.pixelOffset;
-                if (!defined(bbPixelOffset)) {
-                    bbPixelOffset = new Cartesian2(0.0, 0.0);
-                }
-
-                bbPixelOffset.y += BILLBOARD_SIZE * 0.5 * scale;
-                billboard.pixelOffset = bbPixelOffset;
-
-                var labelPixelOffset = label.pixelOffset;
-                if (!defined(labelPixelOffset)) {
-                    labelPixelOffset = new Cartesian2(0.0, 0.0);
-                }
-
-                labelPixelOffset.y += BILLBOARD_SIZE * 0.5 * scale;
-                label.pixelOffset = labelPixelOffset;
-            }
         }
     }
 
